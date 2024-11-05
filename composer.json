@@ -4,7 +4,7 @@
     "description": "Base components for the component view",
     "license": "GPL-3.0+",
     "require": {
-        "nezaniel/componentview": "^2.0 || dev-beta13"
+        "nezaniel/componentview": "^2.0 || dev-beta13 || dev-beta15"
     },
     "autoload": {
         "psr-4": {
