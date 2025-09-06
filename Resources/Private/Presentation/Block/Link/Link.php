@@ -6,7 +6,7 @@ namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\Link;
 
 use Neos\Flow\Annotations as Flow;
 use Nezaniel\ComponentView\Domain\AbstractComponent;
-use Nezaniel\ComponentView\Domain\ComponentInterface;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 use Psr\Http\Message\UriInterface;
 
 #[Flow\Proxy(false)]
