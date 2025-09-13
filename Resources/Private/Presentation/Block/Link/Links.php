@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\Link;
 
 use Neos\Flow\Annotations as Flow;
-use Nezaniel\ComponentView\Domain\AbstractComponent;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 
+/** @deprecated use ComponentCollection<Link> instead */
 #[Flow\Proxy(false)]
-final readonly class Links extends AbstractComponent
+final readonly class Links implements ComponentInterface
 {
     /**
      * @var array<int|string,Link>

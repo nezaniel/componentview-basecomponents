@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\Link;
 
 use Neos\Flow\Annotations as Flow;
-use Nezaniel\ComponentView\Domain\AbstractComponent;
 use PackageFactory\PHPComponentEngine\ComponentInterface;
 use Psr\Http\Message\UriInterface;
 
 #[Flow\Proxy(false)]
-final readonly class Link extends AbstractComponent
+final readonly class Link implements ComponentInterface
 {
     public function __construct(
         private UriInterface $uri,

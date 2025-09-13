@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\Font;
 
 use Neos\Flow\Annotations as Flow;
-use Nezaniel\ComponentView\Domain\AbstractComponent;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 use Psr\Http\Message\UriInterface;
 
 #[Flow\Proxy(false)]
-final readonly class Font extends AbstractComponent
+final readonly class Font implements ComponentInterface
 {
     public function __construct(
         private UriInterface $baseUri,

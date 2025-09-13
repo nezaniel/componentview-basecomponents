@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\JavaScript;
 
 use Neos\Flow\Annotations as Flow;
-use Nezaniel\ComponentView\Domain\AbstractComponent;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 
+/** @deprecated use ComponentCollection<AbstractJavaScript> instead */
 #[Flow\Proxy(false)]
-final readonly class JavaScripts extends AbstractComponent
+final readonly class JavaScripts implements ComponentInterface
 {
     /**
      * @var array<int|string,AbstractJavaScript|string>

@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\Font;
 
 use Neos\Flow\Annotations as Flow;
-use Nezaniel\ComponentView\Domain\AbstractComponent;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 
 #[Flow\Proxy(false)]
-final readonly class Fonts extends AbstractComponent
+final readonly class Fonts implements ComponentInterface
 {
     /**
      * @var array<int|string,Font>

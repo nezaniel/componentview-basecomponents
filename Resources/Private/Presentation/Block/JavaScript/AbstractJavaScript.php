@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\JavaScript;
 
-use Nezaniel\ComponentView\Domain\AbstractComponent;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 
-abstract readonly class AbstractJavaScript extends AbstractComponent
+abstract readonly class AbstractJavaScript implements ComponentInterface
 {
 }

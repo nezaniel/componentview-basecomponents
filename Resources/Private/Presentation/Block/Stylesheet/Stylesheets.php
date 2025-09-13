@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\Stylesheet;
 
 use Neos\Flow\Annotations as Flow;
-use Nezaniel\ComponentView\Domain\AbstractComponent;
+use PackageFactory\PHPComponentEngine\ComponentInterface;
 
+/** @deprecated use ComponentCollection<Stylesheet> instead */
 #[Flow\Proxy(false)]
-final readonly class Stylesheets extends AbstractComponent
+final readonly class Stylesheets implements ComponentInterface
 {
     /**
      * @var array<int|string,Stylesheet|InlineStylesheet>
