@@ -28,6 +28,12 @@ final readonly class JavaScripts implements ComponentInterface
 
     public function render(): string
     {
-        return implode('', $this->javaScripts);
+        return implode(
+            '',
+            array_map(
+                fn (AbstractJavaScript|string $item): string => is_string($item) ? $item : $item->render(),
+                $this->javaScripts
+            )
+        );
     }
 }

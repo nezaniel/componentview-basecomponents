@@ -28,6 +28,12 @@ final readonly class Stylesheets implements ComponentInterface
 
     public function render(): string
     {
-        return implode('', $this->stylesheets);
+        return implode(
+            '',
+            array_map(
+                fn (Stylesheet $stylesheet): string => $stylesheet->render(),
+                $this->stylesheets
+            )
+        );
     }
 }
