@@ -23,6 +23,9 @@ final readonly class Links implements ComponentInterface
 
     public function render(): string
     {
-        return implode('', $this->links);
+        return implode('', array_map(
+            fn (Link $link): string => $link->render(),
+            $this->links
+        ));
     }
 }

@@ -22,6 +22,9 @@ final readonly class Fonts implements ComponentInterface
 
     public function render(): string
     {
-        return implode('', $this->fonts);
+        return implode('', array_map(
+            fn (Font $font): string => $font->render(),
+            $this->fonts
+        ));
     }
 }

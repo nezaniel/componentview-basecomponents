@@ -31,7 +31,7 @@ final readonly class Stylesheets implements ComponentInterface
         return implode(
             '',
             array_map(
-                fn (Stylesheet $stylesheet): string => $stylesheet->render(),
+                fn (Stylesheet|InlineStylesheet $stylesheet): string => $stylesheet->render(),
                 $this->stylesheets
             )
         );

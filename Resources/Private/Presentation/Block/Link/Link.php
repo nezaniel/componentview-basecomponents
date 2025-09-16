@@ -25,7 +25,7 @@ final readonly class Link implements ComponentInterface
             <a href="' . $this->uri . '" target="' . $this->linkTarget->value . '"' . $this->linkTarget->getRel()
             . ($this->download ? ' download' : '')
             . '">'
-                . $this->content
+                . ($this->content instanceof ComponentInterface ? $this->content->render() : $this->content)
             . '</a>';
     }
 }

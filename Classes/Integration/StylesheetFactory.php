@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Nezaniel\ComponentView\BaseComponents\Integration;
 
-use Nezaniel\ComponentView\Application\AbstractComponentFactory;
 use Nezaniel\ComponentView\BaseComponents\Presentation\Block\Stylesheet\InlineStylesheet;
 use Nezaniel\ComponentView\BaseComponents\Presentation\Block\Stylesheet\Stylesheet;
 use Nezaniel\ComponentView\BaseComponents\Presentation\CacheBusterKey;
+use PackageFactory\Neos\ComponentEngine\NeosAccessInterface;
 
-final class StylesheetFactory extends AbstractComponentFactory
+final class StylesheetFactory
 {
-    public function create(string $packageKey, string $fileName): Stylesheet
+    public function create(string $packageKey, string $fileName, NeosAccessInterface $neos): Stylesheet
     {
         return new Stylesheet(
-            $this->uriService->getResourceUri(
+            $neos->getStaticResourceUri(
                 $packageKey,
                 'Styles/' . $fileName . '.css?cb=' . CacheBusterKey::get()
             )

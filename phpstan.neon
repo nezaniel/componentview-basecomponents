@@ -3,4 +3,3 @@ parameters:
     paths:
         - Classes
         - Resources/Private/Presentation
-    checkGenericClassInNonGenericObjectType: false
