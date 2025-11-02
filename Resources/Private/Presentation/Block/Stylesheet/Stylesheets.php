@@ -19,7 +19,7 @@ final readonly class Stylesheets implements ComponentInterface
     ) {
     }
 
-    public static function list(Stylesheet|InlineStylesheet ...$stylesheets)
+    public static function list(Stylesheet|InlineStylesheet ...$stylesheets): self
     {
         return new self($stylesheets);
     }

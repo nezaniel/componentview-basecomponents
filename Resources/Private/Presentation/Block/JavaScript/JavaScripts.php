@@ -19,7 +19,7 @@ final readonly class JavaScripts implements ComponentInterface
     ) {
     }
 
-    public static function list(AbstractJavaScript|string ...$javaScripts)
+    public static function list(AbstractJavaScript|string ...$javaScripts): self
     {
         return new self($javaScripts);
     }
