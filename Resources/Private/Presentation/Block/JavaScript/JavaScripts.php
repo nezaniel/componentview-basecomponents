@@ -12,18 +12,21 @@ use PackageFactory\PHPComponentEngine\ComponentInterface;
 final readonly class JavaScripts implements ComponentInterface
 {
     /**
-     * @var array<int|string,AbstractJavaScript|string>
+     * @param array<int|string,AbstractJavaScript|string> $javaScripts
      */
-    private array $javaScripts;
+    private function __construct(
+        private array $javaScripts
+    ) {
+    }
 
-    public function __construct(AbstractJavaScript|string ...$javaScripts)
+    public static function list(AbstractJavaScript|string ...$javaScripts)
     {
-        $this->javaScripts = $javaScripts;
+        return new self($javaScripts);
     }
 
     public function union(self $other): self
     {
-        return new self(...array_merge($this->javaScripts, $other->javaScripts));
+        return new self(array_merge($this->javaScripts, $other->javaScripts));
     }
 
     public function render(): string

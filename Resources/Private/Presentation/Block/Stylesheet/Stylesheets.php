@@ -12,18 +12,21 @@ use PackageFactory\PHPComponentEngine\ComponentInterface;
 final readonly class Stylesheets implements ComponentInterface
 {
     /**
-     * @var array<int|string,Stylesheet|InlineStylesheet>
+     * @param array<int|string,Stylesheet|InlineStylesheet> $stylesheets
      */
-    private array $stylesheets;
+    private function __construct(
+        private array $stylesheets
+    ) {
+    }
 
-    public function __construct(Stylesheet|InlineStylesheet ...$stylesheets)
+    public static function list(Stylesheet|InlineStylesheet ...$stylesheets)
     {
-        $this->stylesheets = $stylesheets;
+        return new self($stylesheets);
     }
 
     public function union(self $other): self
     {
-        return new self(...array_merge($this->stylesheets, $other->stylesheets));
+        return new self(array_merge($this->stylesheets, $other->stylesheets));
     }
 
     public function render(): string
