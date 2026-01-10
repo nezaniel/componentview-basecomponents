@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Nezaniel\ComponentView\BaseComponents\Presentation\Block\JavaScript;
 
 use Neos\Flow\Annotations as Flow;
-use PackageFactory\PHPComponentEngine\ComponentInterface;
+use PackageFactory\ComponentEngine\ComponentInterface;
 
 /** @deprecated use ComponentCollection<AbstractJavaScript> instead */
 #[Flow\Proxy(false)]
