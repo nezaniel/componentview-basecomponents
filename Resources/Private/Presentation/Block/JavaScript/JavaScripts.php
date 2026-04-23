@@ -15,7 +15,7 @@ final readonly class JavaScripts implements ComponentInterface
      * @param array<int|string,AbstractJavaScript|string> $javaScripts
      */
     private function __construct(
-        private array $javaScripts
+        public array $javaScripts
     ) {
     }
 

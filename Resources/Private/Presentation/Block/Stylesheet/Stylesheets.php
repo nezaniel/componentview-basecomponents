@@ -15,7 +15,7 @@ final readonly class Stylesheets implements ComponentInterface
      * @param array<int|string,Stylesheet|InlineStylesheet> $stylesheets
      */
     private function __construct(
-        private array $stylesheets
+        public array $stylesheets
     ) {
     }
 
